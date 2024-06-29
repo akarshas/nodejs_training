@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 
 const shopRoutes = require('./routes/shopRoutes');
-const adminData = require('./routes/adminRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 const notFoundRoutes = require('./routes/notFoundRoutes');
 
 // Middleware
@@ -22,7 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(shopRoutes);
 
 // Handle admin routes
-app.use(adminData.router);
+app.use(adminRoutes);
 
 // Not Found Routes
 app.use(notFoundRoutes);

@@ -5,18 +5,26 @@
     <%- include('./partials/header') %>
     <main>
       <h1> <%= pageTitle %> </h1>
-      <div class="card-container">
-        <div class="card">
-          <img
-            src="https://picsum.photos/200/200"
-            alt="Image 1"
-            class="card-image"
-          />
-          <div class="card-content">
-            <h2 class="card-title">Product Name</h2>
-            <p class="card-price">$100</p>
+      
+      <%  if(products.length == 0) { %>
+      <%  } else { %>
+
+        <div class="card-container">
+          <% products.forEach(product => { %>
+          <div class="card">
+            <img
+              src="https://picsum.photos/200/200"
+              alt="Image 1"
+              class="card-image"
+            />
+            <div class="card-content">
+              <h2 class="card-title"><%= product.title %></h2>
+              <p class="card-price">$100</p>
+            </div>
           </div>
+          <% }) %>
         </div>
-      </div>
+      <% } %>
+     
     </main>
     <%- include('./partials/footer') %>
