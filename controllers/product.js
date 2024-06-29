@@ -9,9 +9,10 @@ const getAddProductPage = (req, res, next) => {
 
 const addProduct = (req, res, next) => {
   const p = new Product(req.body.product);
-  p.save();
-  res.statusCode = 302;
-  res.redirect('/');
+  p.save(() => {
+    res.statusCode = 302;
+    res.redirect('/');
+  });
 };
 
 module.exports = {

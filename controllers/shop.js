@@ -1,10 +1,12 @@
 const Product = require('../models/Product');
 
 const getHomePage = (req, res, next) => {
-  res.render('shop', {
-    pageTitle: 'Product Listing Page',
-    pageUrl: '/',
-    products: Product.getAllProducts(),
+  return Product.getAllProducts((products) => {
+    res.render('shop', {
+      pageTitle: 'Product Listing Page',
+      pageUrl: '/',
+      products: products,
+    });
   });
 };
 
