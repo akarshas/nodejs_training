@@ -1,0 +1,12 @@
+<header>
+    <nav>
+        <ul class="nav-list">
+        <li class="nav-list__item <%= pageUrl == '/' ? 'active' : ''  %> ">
+            <a href="/" class="<%= pageUrl == '/' ? 'active' : ''  %>">Shop</a>
+        </li>
+        <li class="nav-list__item <%= pageUrl == '/add-product' ? 'active' : ''  %>">
+            <a href="/add-product" class="<%= pageUrl == '/add-product' ? 'active' : ''  %>">Add a Product</a>
+        </li>
+        </ul>
+    </nav>
+</header>

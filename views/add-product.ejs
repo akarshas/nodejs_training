@@ -1,0 +1,17 @@
+<%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/add-product.css" />
+  </head>
+  <body>
+    <%- include('./partials/header') %>
+    <main>
+      <h1>Add product</h1>
+      <form method="POST" action="/add-product" class="product-form">
+        <input
+          name="product"
+          class="product-input"
+          placeholder="Enter product name"
+        />
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </main>
+    <%- include('./partials/footer') %>
